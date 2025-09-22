@@ -1,37 +1,29 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Sens-AI Career Coach
 
-## Getting Started
+> Next.js App Router • Tailwind/shadcn • Prisma (Postgres/Neon) • Clerk Auth • Gemini
 
-First, run the development server:
+[![Live Demo](https://img.shields.io/badge/Live-Demo-00b894)](https://career-coach-six.vercel.app/)
+[![Status](https://img.shields.io/website?url=https%3A%2F%2Fcareer-coach-six.vercel.app)](https://career-coach-six.vercel.app)
 
+> ⚠️ Access is restricted via Clerk. If you need demo access, please request an invite.
+
+## 🚀 Live
+**Production:** https://career-coach-six.vercel.app/
+
+## ✨ Features
+- AI interview coach & resume helper (Gemini)
+- Auth & sessions (Clerk)
+- Postgres/Prisma data layer (Neon)
+- App Router, RSC, server actions, shadcn UI
+
+## 🧰 Tech Stack
+Next.js 15 • Tailwind/shadcn • Prisma • Postgres (Neon) • Clerk • Vercel
+
+## 🖥️ Local Dev
 ```bash
+git clone https://github.com/thevishwajeeetkumar/career-coach
+cd career-coach
+cp .env.example .env.local   # fill vars
+npm ci
+npx prisma generate
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) or [https://career-coach-six.vercel.app/](https://career-coach-six.vercel.app/)  with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-Deployed app Link : [https://career-coach-six.vercel.app/](https://career-coach-six.vercel.app/)
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
