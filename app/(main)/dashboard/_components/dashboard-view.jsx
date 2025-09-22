@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+
 import {
   BarChart,
   Bar,
@@ -17,7 +18,9 @@ import {
   TrendingDown,
   Brain,
 } from "lucide-react";
+
 import { format, formatDistanceToNow } from "date-fns";
+
 import {
   Card,
   CardContent,
