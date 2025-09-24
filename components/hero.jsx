@@ -1,13 +1,16 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import ProCTA from "./ProCTA";
 
 const HeroSection = () => {
   const imageRef = useRef(null);
+  const [isPro, setIsPro] = useState(false);
 
+  // Scroll animation for hero image
   useEffect(() => {
     const imageElement = imageRef.current;
 
@@ -16,14 +19,22 @@ const HeroSection = () => {
       const scrollThreshold = 100;
 
       if (scrollPosition > scrollThreshold) {
-        imageElement.classList.add("scrolled");
+        imageElement?.classList.add("scrolled");
       } else {
-        imageElement.classList.remove("scrolled");
+        imageElement?.classList.remove("scrolled");
       }
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Check Pro status
+  useEffect(() => {
+    fetch("/api/me/pro", { cache: "no-store" })
+      .then((res) => res.json())
+      .then((data) => setIsPro(!!data.pro))
+      .catch(() => setIsPro(false));
   }, []);
 
   return (
@@ -40,18 +51,26 @@ const HeroSection = () => {
             AI-powered tools for job success.
           </p>
         </div>
+
+        {/* CTAs */}
         <div className="flex justify-center space-x-4">
           <Link href="/dashboard">
             <Button size="lg" className="px-8">
               Get Started
             </Button>
           </Link>
-          <Link href="">
-            <Button size="lg" variant="outline" className="px-8">
-              Watch Demo
-            </Button>
-          </Link>
+
+          <ProCTA
+            href="/pro-features"
+            tone="outline"
+            size="lg"
+            className="px-8 bg-white text-zinc-900 border shadow-sm hover:bg-zinc-50 hover:shadow-md transition"
+          >
+            Explore Pro
+          </ProCTA>
         </div>
+
+        {/* Hero image */}
         <div className="hero-image-wrapper mt-5 md:mt-0">
           <div ref={imageRef} className="hero-image">
             <Image

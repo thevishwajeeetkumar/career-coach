@@ -34,6 +34,8 @@
     "lucide-react": "^0.479.0",
     "next": "15.2.1",
     "next-themes": "^0.4.4",
+    "nodemon": "^3.1.10",
+    "razorpay": "^2.9.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.2",
@@ -51,7 +53,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
     "postcss": "^8.5.3",
-    "prisma": "5.18.0" ,
+    "prisma": "5.18.0",
     "tailwindcss": "^3.4.17"
   }
 }

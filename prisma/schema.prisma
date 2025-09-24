@@ -28,7 +28,27 @@ model User {
   assessments   Assessment[]
   resume        Resume?
   coverLetter   CoverLetter[]
+
+  pro       Boolean   @default(false)
+  proSince  DateTime?
+  payments  Payment[]
 }
+
+model Payment {
+  id         String   @id @default(cuid())
+  orderId    String   @unique
+  paymentId  String?  @unique
+  amount     Int
+  currency   String
+  status     String   // created | paid | failed
+  plan       String
+  userId     String
+  user       User     @relation(fields: [userId], references: [id])
+  eventId    String?  @unique // store webhook x-razorpay-event-id for idempotency
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
 
 model Assessment {
   id            String    @id @default(cuid())
