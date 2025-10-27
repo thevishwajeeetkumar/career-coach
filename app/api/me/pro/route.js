@@ -17,8 +17,10 @@ export async function GET() {
     });
 
     return NextResponse.json({ pro: !!me?.pro }, { status: 200 });
-  } catch (err) {
+  } 
+  catch (err) {
     console.error("Error in /api/me/pro:", err);
     return NextResponse.json({ pro: false, error: "Internal server error" }, { status: 500 });
   }
 }
+
